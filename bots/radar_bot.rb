@@ -11,6 +11,12 @@ class RadarBot < RTanque::Bot::Brain
     else
       scan_for_targets
     end
+    circle_clockwise
+  end
+
+  def circle_clockwise
+    command.speed = MAX_BOT_SPEED
+    command.heading = sensors.heading + 0.1
   end
 
   def acquire_target
